@@ -16,6 +16,10 @@ app.use('/api/appdata', require('./routes/appData'))
 app.use('/api/songsdata', require('./routes/songsData'))
 
 
+app.get('/',(req,res) => {
+  res.json({message: "Backend is working"})
+})
+
 
 app.listen(process.env.PORT, () => {
   dbgr(`spotify backend listening at http://localhost:${process.env.PORT}`)
